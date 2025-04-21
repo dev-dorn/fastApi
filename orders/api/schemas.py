@@ -6,13 +6,13 @@ from datetime import datetime
 from pydantic import BaseModel, Field, field_validator
 
 # Define the possible sizes
-class Size(Enum):
+class Size(str, Enum):
     small = "small"
     medium = "medium"
-    large = "big"
+    large = "large"
 
 # Define possible order statuses
-class Status(Enum):
+class Status(str, Enum):
     created = 'created'
     progress = 'progress'
     cancelled = 'cancelled'
@@ -25,17 +25,21 @@ class OrderItemSchema(BaseModel):
     size: Size
     quantity: Annotated[int, Field(ge=1, strict=True)] = 1
 
-    # Validator to ensure quantity is not None and is positive
-    @field_validator('quantity')
+    class Config:
+        extra = 'forbid' #
+
+    @field_validator('quantity', mode='before')
     @classmethod
     def quantity_non_nullable(cls, value):
-       if value is None or value < 1:
-           raise ValueError('Quantity must be a positive number and may not be None')
-       return value
+        if value is None or value < 1:
+            raise ValueError('Quantity must be a positive number and may not be None')
+        return value
 
 # Schema to create orders, which expects a list of items
 class CreateOrderSchema(BaseModel):
     order: List[OrderItemSchema] = Field(..., min_items=1)
+    class Config:
+        extra = 'forbid'
 
 # Schema for retrieving a single order with an ID, creation date, and status
 class GetOrderSchema(CreateOrderSchema):
@@ -45,4 +49,4 @@ class GetOrderSchema(CreateOrderSchema):
 
 # Schema for returning a list of orders
 class GetOrdersSchema(BaseModel):
-    orders: List[GetOrderSchema] = []  # Ensure it's always a list, even if empty
+    orders: List[GetOrderSchema] = []
