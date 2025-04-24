@@ -1,43 +1,30 @@
 # 🧾 Orders API with FastAPI – A Beginner-Friendly Guide
-About
-This project is a modular kitchen and ordering API built with Flask, designed to streamline the management of food orders within a microservices architecture. It provides a RESTful interface for scheduling, tracking, updating, and canceling kitchen orders, making it ideal for restaurant automation, cloud kitchens, or food delivery platforms.​
+# Kitchen and Ordering API
 
-Key Features
-Modular Microservices Design: Each service operates independently, enhancing scalability and maintainability.​
+## About
+This project is a modular kitchen and ordering API built with Flask, designed to streamline the management of food orders within a microservices architecture. It provides a RESTful interface for scheduling, tracking, updating, and canceling kitchen orders, making it ideal for restaurant automation, cloud kitchens, or food delivery platforms.
 
-Flask-Smorest Integration: Utilizes Flask-Smorest for structured API development and documentation.​
-liveBook · Manning
+## Key Features
 
-Robust Data Validation: Employs Marshmallow schemas to ensure data integrity and consistency.​
+- **Modular Microservices Design**: Each service operates independently, enhancing scalability and maintainability.
+- **Flask-Smorest Integration**: Utilizes Flask-Smorest for structured API development and documentation.
+- **Robust Data Validation**: Employs Marshmallow schemas to ensure data integrity and consistency.
+- **Flexible Querying**: Supports filtering of schedules based on status, time, and limits via query parameters.
+- **Comprehensive Order Management**: Enables full lifecycle management of kitchen orders, including creation, updates, and cancellations.
 
-Flexible Querying: Supports filtering of schedules based on status, time, and limits via query parameters.​
+## Use Cases
 
-Comprehensive Order Management: Enables full lifecycle management of kitchen orders, including creation, updates, and cancellations.​
+- **Restaurant Automation**: Integrate with POS systems to automate kitchen order processing.
+- **Cloud Kitchens**: Manage multiple virtual kitchen operations efficiently.
+- **Food Delivery Platforms**: Coordinate order preparation and delivery seamlessly.
 
-Use Cases
-Restaurant Automation: Integrate with POS systems to automate kitchen order processing.​
+## Technologies Used
 
-Cloud Kitchens: Manage multiple virtual kitchen operations efficiently.​
-
-Food Delivery Platforms: Coordinate order preparation and delivery seamlessly.​
-delivety.com
-+3
-restapp.com
-+3
-Restroworks
-+3
-
-Technologies Used
-Flask: A lightweight WSGI web application framework.​
-
-Flask-Smorest: An extension for building REST APIs with Flask.​
-
-Marshmallow: A library for object serialization and deserialization.​
-
-UUID: For generating unique identifiers for orders.​
-
-Datetime: For handling scheduling timestamps.
-
+- **Flask**: A lightweight WSGI web application framework.
+- **Flask-Smorest**: An extension for building REST APIs with Flask.
+- **Marshmallow**: A library for object serialization and deserialization.
+- **UUID**: For generating unique identifiers for orders.
+- **Datetime**: For handling scheduling timestamps.
 
 ---
 
