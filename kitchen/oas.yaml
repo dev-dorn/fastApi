@@ -201,7 +201,7 @@ components:
           type: integer
           minimum: 1
 
-    ScheduleOrderSchema: #represents the payload required to schedule an order for production
+    ScheduleOrderSchema:
       type: object
       additionalProperties: false
       required:
@@ -212,7 +212,7 @@ components:
           items:
             $ref: '#/components/schemas/OrderItemSchema'
 
-    GetScheduledOrderSchema: #represmnts the deatails of an order that has been
+    GetScheduledOrderSchema:
       type: object
       additionalProperties: false
       required:
